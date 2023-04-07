@@ -1,0 +1,26 @@
+{
+  "name": "forkify",
+  "version": "1.0.0",
+  "description": "Recipe app",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dkimhw/forkify.git"
+  },
+  "author": "David Kim",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dkimhw/forkify/issues"
+  },
+  "homepage": "https://github.com/dkimhw/forkify#readme",
+  "dependencies": {
+    "parcel": "^2.8.3",
+    "sass": "^1.60.0"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.8.3"
+  }
+}
