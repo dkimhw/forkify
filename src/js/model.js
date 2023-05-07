@@ -1,5 +1,5 @@
 
-import { API_URL } from "./config";
+import { API_URL, GET_RECIPE_API_URL } from "./config";
 import { getJSON } from "./helpers";
 
 export const state = {
