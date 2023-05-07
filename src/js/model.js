@@ -1,5 +1,5 @@
 
-import { API_URL, GET_RECIPE_API_URL } from "./config";
+import { API_URL } from "./config";
 import { getJSON } from "./helpers";
 
 export const state = {
@@ -45,7 +45,6 @@ export const loadSearchResults = async function (query) {
       }
     });
 
-    console.log(state.search.results);
   } catch (err) {
     throw err;
   }
