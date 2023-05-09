@@ -26,16 +26,15 @@
   }
 
   &__field {
-    border: none;
-    background: none;
+    border: 1px solid #615551;
+    border-radius: 10px;
+    margin-right: 1rem;
+    padding: 1rem;
+    // background: none;
     font-family: inherit;
     color: inherit;
     font-size: 1.7rem;
     width: 30rem;
-
-    &:focus {
-      outline: none;
-    }
 
     &::placeholder {
       color: $color-grey-light-3;
