@@ -26,8 +26,9 @@
   }
 
   &__field {
-    border: 1px solid #615551;
-    border-radius: 10px;
+    // border: 1px solid #615551;
+    // border-radius: 10px;
+    border: none;
     margin-right: 1rem;
     padding: 1rem;
     // background: none;
@@ -35,6 +36,7 @@
     color: inherit;
     font-size: 1.7rem;
     width: 30rem;
+    outline: none;
 
     &::placeholder {
       color: $color-grey-light-3;
