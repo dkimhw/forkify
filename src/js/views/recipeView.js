@@ -16,8 +16,7 @@ class RecipeView extends View {
     this._parentElement.addEventListener('click', function (evt) {
       const btn = evt.target.closest('.btn--tiny');
       if (!btn) return;
-      console.log(btn);
-      handler(btn.dataset.updateTo);
+      if (btn.dataset.updateTo > 0) handler(btn.dataset.updateTo);
     });
   }
 

@@ -17,6 +17,9 @@ const controlRecipes = async function () {
 
     recipeView.renderSpinner();
 
+    // 0. Update results view to mark selected search result
+    resultsView.update(model.getSearchResultsPage());
+
     // https://forkify-api.herokuapp.com/api/v2/recipes/5ed6604591c37cdc054bc886
     // https://forkify-api.herokuapp.com/api/v2/recipes/5ed6604591c37cdc054bcc40
     // 1. Load Recipe
@@ -63,7 +66,8 @@ const controlServings = function (newServings) {
   model.updateServings(newServings);
 
   // Update the recipe view
-  recipeView.render(model.state.recipe);
+  // recipeView.render(model.state.recipe);
+  recipeView.update(model.state.recipe);
 }
 
 const init = function() {
