@@ -17,10 +17,8 @@ class PaginationView extends View {
   _generateMarkup() {
     const currPage = this._data.page;
     const numPages = Math.ceil(this._data.results.length / this._data.resultsPerPage);
-    console.log("data.page", this._data.page);
 
     if (currPage === 1 && numPages > 1) {
-      console.log("hello")
       return `
         <button data-goto="${currPage + 1}" class="btn--inline pagination__btn--next">
           <span>Page ${currPage + 1}</span>
