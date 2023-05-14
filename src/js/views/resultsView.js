@@ -1,6 +1,6 @@
 
 import View from "./View";
-import icons from 'url:../../img/icons.svg';
+import previewView from "./previewView";
 
 
 class ResultsView extends View {
@@ -10,21 +10,7 @@ class ResultsView extends View {
 
   _generateMarkup() {
     return this._data.map(recipe => {
-      const id = window.location.hash.slice(1);
-
-      return `
-        <li class="preview">
-          <a class="preview__link ${id === recipe.id ? 'preview__link--active' : ''}" href="#${recipe.id}">
-            <figure class="preview__fig">
-              <img src="${recipe.image}" alt="Test" />
-            </figure>
-            <div class="preview__data">
-              <h4 class="preview__title">${recipe.title}</h4>
-              <p class="preview__publisher">${recipe.publisher}</p>
-            </div>
-          </a>
-        </li>
-      `
+      return previewView.render(recipe, false);
     }).join('');
   }
 }

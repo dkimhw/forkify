@@ -20,7 +20,6 @@ const controlRecipes = async function () {
 
     // 0. Update results view to mark selected search result
     resultsView.update(model.getSearchResultsPage());
-    bookmarksView.update(model.state.bookmarks);
 
     // https://forkify-api.herokuapp.com/api/v2/recipes/5ed6604591c37cdc054bc886
     // https://forkify-api.herokuapp.com/api/v2/recipes/5ed6604591c37cdc054bcc40
@@ -30,6 +29,10 @@ const controlRecipes = async function () {
 
     // 2. Rendering recipe
     recipeView.render(recipe);
+
+    // 3. Rendering bookmarks
+    bookmarksView.update(model.state.bookmarks);
+
   } catch (err) {
     recipeView.renderError(err);
   }
@@ -73,7 +76,7 @@ const controlServings = function (newServings) {
 }
 
 const controlAddBookmark = function() {
-  // 1) Add / rmv bookmar
+  // 1) Add / rmv bookmark
   if (!model.state.recipe?.bookmarked) {
     model.addBookmark(model.state.recipe);
   } else {
@@ -87,7 +90,12 @@ const controlAddBookmark = function() {
   bookmarksView.render(model.state.bookmarks);
 }
 
+const controlBookmarks = function () {
+  bookmarksView.render(model.state.bookmarks);
+}
+
 const init = function() {
+  bookmarksView.addHandlerRender(controlBookmarks);
   recipeView.addHandlerRender(controlRecipes);
   recipeView.addHandlerUpdateServings(controlServings);
   recipeView.addHandlerAddBookmark(controlAddBookmark);
