@@ -33,13 +33,13 @@ export const loadRecipe = async function (id) {
     data = await getJSON(`${API_URL}${id}`);
     state.recipe = createRecipeObject(data);
 
-    if (state.bookmarks.some(b => b.id === recipe.id)) {
+    if (state.bookmarks.some(b => b.id === state.recipe.id)) {
       state.recipe.bookmarked = true;
     } else {
       state.recipe.bookmarked = false;
     }
 
-    return recipe;
+    return state.recipe;
   } catch (err) {
     throw err;
   }
